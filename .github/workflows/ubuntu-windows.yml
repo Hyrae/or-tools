@@ -70,9 +70,7 @@ jobs:
           - python: OFF
             python-version: '3.9'
         include:
-          - 
-          
-          : ON
+          - extras: ON
             python: OFF
             publish-or: ON
             dotnet: ON
