@@ -164,7 +164,7 @@ jobs:
         if: ${{ startsWith(matrix.os, 'ubuntu') && matrix.xprs == 'ON' }}
         uses: actions/checkout@v2
         with:
-          repository: rte-france/xpress-mp
+          repository: Hyrae/xpressmp-linux64
           path: ${{ env.XPRESSDIR }}
           ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
