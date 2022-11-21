@@ -172,7 +172,7 @@ jobs:
         if: ${{ startsWith(matrix.os, 'windows') && matrix.xprs == 'ON' }}
         uses: actions/checkout@v2
         with:
-          repository: rte-france/xpress-mp-temp
+          repository: Hyrae/xpressmp-win64
           path: ${{ env.XPRESSDIR }}
           ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
