@@ -23,22 +23,22 @@
 extern "C" {
 typedef struct XPRSobject_s* XPRSobject;
 typedef void (*XPRSfunctionptr)(void);
-typedef XPRSfunctionptr* XPRSfunctionptraddr;
 typedef struct xo_prob_struct* XPRSprob;
-typedef struct XPRSglobalenv_s* XPRSglobalenv;
 typedef struct XPRSmipsolpool_s* XPRSmipsolpool;
-typedef struct XPRSmessagingadmin_s* XPRSmessagingadmin;
 typedef struct xo_NameList* XPRSnamelist;
 typedef struct XPRSmipsolenum_s* XPRSmipsolenum;
 typedef struct xo_user_branch_entity_s* XPRSbranchobject;
 typedef struct PoolCut* XPRScut;
-typedef struct xo_TreeNode_s* XPRSnode;
 }
 
 namespace operations_research {
 
-int initXpressEnv(int xpress_oem_license_key = 0);
+#define XPRS_MAXBANNERLENGTH 1000
+void printXpressBanner(bool error);
 
+bool initXpressEnv(bool verbose = true, int xpress_oem_license_key = 0);
+
+bool XpressIsCorrectlyInstalled();
 // clang-format off
 // Force the loading of the xpress dynamic library. It returns true if the
 // library was successfully loaded. This method can only be called once.
